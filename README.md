@@ -18,7 +18,7 @@ git clone https://github.com/Davidmdawe/Background-Job-Runner-.git
 
 2. Navigate to the project directory:
 
-cd Background-Job-Runner
+cd Background-Job-Runner-
 
 3. Install dependencies using Composer:
 
