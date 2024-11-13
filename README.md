@@ -10,43 +10,47 @@ Key Features
     Logging & Security Validation: Logs job details and validates security to block unauthorized jobs.
     Priority & Delay Options: Supports priority levels and delayed execution for jobs.
 
-1.Installation
+1. Installation
 
-    Clone the repository:
+Clone the repository:
 
 git clone https://github.com/yourusername/Background-Job-Runner.git
 
-2.Navigate to the project directory:
+2. Navigate to the project directory:
 
 cd Background-Job-Runner
 
-3.Install dependencies using Composer:
+3. Install dependencies using Composer:
 
 composer install
 
-4.Install npm dependencies (if applicable):
+4. Install npm dependencies (if applicable):
 
 npm install
 npm run dev
 
-5.Copy the .env.example to .env and configure the environment variables:
+5. Copy the .env.example to .env and configure the environment variables:
 
 cp .env.example .env
 php artisan key:generate
 
-6.Run the migrations to set up the database:
+6. Run the migrations to set up the database:
 
     php artisan migrate
 
-7.Usage
+7. Usage
 
 To queue a background job, call the runBackgroundJob function with the necessary parameters. For example:
 
 runBackgroundJob('App\Jobs\ExampleJob', 'handle', ['param1', 'param2'], $priority = 1, $delay = 0);
 
-8.Testing Unauthorized Jobs
+8. Validate Approved Jobs
 
-To test calling runBackgroundJob with an unauthorized class or method, wrap it in a try-catch block to catch any exceptions:
+visit the route /run-example-job in your browser or call it via a tool like Postman.
+
+9. Testing Unauthorized Jobs
+
+To test calling runBackgroundJob with an unauthorized class or method, wrap it in a try-catch block to catch any exceptions visit the route /test-unauthorized-job in your browser or call it via a tool like Postman.:
 
 try {
     runBackgroundJob('App\Jobs\UnauthorizedJob', 'unauthorizedMethod');
@@ -54,7 +58,7 @@ try {
     echo "Security check passed: Unauthorized job was blocked. Error: " . $e->getMessage();
 }
 
-9.Web Dashboard (Optional)
+10. Web Dashboard (Optional)
 
 The project includes an optional web-based dashboard for managing background jobs:
 
@@ -62,7 +66,7 @@ The project includes an optional web-based dashboard for managing background job
     Retry or cancel jobs from the dashboard.
     Access the dashboard at /dashboard/jobs (requires admin privileges).
 
-10.License
+11. License
 
 This project is licensed under the MIT license.
 
